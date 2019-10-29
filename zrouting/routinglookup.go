@@ -100,7 +100,7 @@ func (t *RoutingLookupTree) Get(ip net.IP) (*RoutingOutput, error) {
 	if n, ok, err := t.IPTree.Get(ip); ok && err == nil {
 		node := n.(ASTreeNode)
 		out.Prefix = node.Prefix
-		out.Path = node.Path
+		//out.Path = node.Path
 		out.ASN = node.ASN
 		if t.ASNames != nil {
 			var n ASNameNode

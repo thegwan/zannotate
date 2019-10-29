@@ -202,30 +202,30 @@ func (a *GeoIP2Annotator) GeoIP2FillStruct(in *geoip2.City) *GeoIP2Output {
 		var city GeoIP2City
 		out.City = &city
 		out.City.Name = in.City.Names[language]
-		out.City.GeoNameId = in.City.GeoNameID
+		//out.City.GeoNameId = in.City.GeoNameID
 	}
 	if a.Factory.IncludeCountry == true {
 		var country GeoIP2Country
 		out.Country = &country
 		out.Country.Name = in.Country.Names[language]
-		out.Country.GeoNameId = in.Country.GeoNameID
+		//out.Country.GeoNameId = in.Country.GeoNameID
 		out.Country.Code = in.Country.IsoCode
 	}
 	if a.Factory.IncludeContinent == true {
 		var country GeoIP2Country
 		out.Continent = &country
 		out.Continent.Name = in.Continent.Names[language]
-		out.Continent.GeoNameId = in.Continent.GeoNameID
+		//out.Continent.GeoNameId = in.Continent.GeoNameID
 		out.Continent.Code = in.Continent.Code
 	}
 	if a.Factory.IncludeLatLong == true {
 		var latlong GeoIP2LatLong
 		out.LatLong = &latlong
-		out.LatLong.AccuracyRadius = in.Location.AccuracyRadius
+		//out.LatLong.AccuracyRadius = in.Location.AccuracyRadius
 		out.LatLong.Latitude = in.Location.Latitude
 		out.LatLong.Longitude = in.Location.Longitude
-		out.LatLong.MetroCode = in.Location.MetroCode
-		out.LatLong.TimeZone = in.Location.TimeZone
+		//out.LatLong.MetroCode = in.Location.MetroCode
+		//out.LatLong.TimeZone = in.Location.TimeZone
 	}
 	if a.Factory.IncludePostal == true {
 		var postal GeoIP2Postal
